@@ -71,7 +71,7 @@ public class KenBurnsView extends FrameLayout {
 
     private ImageView.ScaleType mScaleType = null;
 
-    private static int sCachedSizeForLoadType;
+    private int sCachedSizeForLoadType = 0;
 
     public KenBurnsView(Context context) {
         this(context, null);
@@ -309,7 +309,6 @@ public class KenBurnsView extends FrameLayout {
 
     public void loadStrings(List<String> strings) {
         mLoadType = LoadType.String;
-        sCachedSizeForLoadType = 0;
         mStrings = strings;
         if (mRootLayout != null) {
             initImageViews(mRootLayout);
@@ -318,7 +317,6 @@ public class KenBurnsView extends FrameLayout {
 
     public void loadResourceIDs(List<Integer> resourceIDs) {
         mLoadType = LoadType.ResourceID;
-        sCachedSizeForLoadType = 0;
         mResourceIDs = resourceIDs;
         if (mRootLayout != null) {
             initImageViews(mRootLayout);
@@ -327,7 +325,6 @@ public class KenBurnsView extends FrameLayout {
 
     public void loadMixing(List<Object> mixingList) {
         mLoadType = LoadType.MIXING;
-        sCachedSizeForLoadType = 0;
         mMixingList = mixingList;
         if (mRootLayout != null) {
             initImageViews(mRootLayout);
